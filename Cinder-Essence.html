@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CINDER - Fire-Inspired Fragrances</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#E67E22',secondary:'#C0392B'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+background-color: #0F0F0F;
+color: #E6E6E6;
+font-family: 'Montserrat', sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+font-family: 'Cormorant Garamond', serif;
+}
+.hero-gradient {
+background: linear-gradient(to right, rgba(15, 15, 15, 0.95) 0%, rgba(15, 15, 15, 0.8) 50%, rgba(15, 15, 15, 0.4) 100%);
+}
+.collection-card {
+background: linear-gradient(135deg, rgba(30, 30, 30, 0.8) 0%, rgba(15, 15, 15, 0.95) 100%);
+transition: all 0.3s ease;
+}
+.collection-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 25px -5px rgba(230, 126, 34, 0.3);
+}
+.nav-link {
+position: relative;
+}
+.nav-link::after {
+content: '';
+position: absolute;
+width: 0;
+height: 1px;
+bottom: -2px;
+left: 0;
+background-color: #E67E22;
+transition: width 0.3s ease;
+}
+.nav-link:hover::after {
+width: 100%;
+}
+.cta-button {
+background: linear-gradient(135deg, #E67E22 0%, #C0392B 100%);
+transition: all 0.3s ease;
+}
+.cta-button:hover {
+background: linear-gradient(135deg, #D35400 0%, #A93226 100%);
+transform: translateY(-2px);
+box-shadow: 0 5px 15px rgba(230, 126, 34, 0.4);
+}
+.newsletter-input {
+background-color: rgba(30, 30, 30, 0.6);
+border: 1px solid rgba(255, 255, 255, 0.1);
+transition: all 0.3s ease;
+}
+.newsletter-input:focus {
+background-color: rgba(30, 30, 30, 0.8);
+border-color: rgba(230, 126, 34, 0.5);
+}
+</style>
+</head>
+<body>
+<!-- Navigation -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-black bg-opacity-90 backdrop-blur-md">
+<div class="container mx-auto px-6 py-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center">
+<a href="#" class="text-3xl font-['Cormorant_Garamond'] font-bold text-primary tracking-wider">CINDER</a>
+</div>
+<div class="hidden md:flex items-center space-x-8">
+<a href="#collection" class="nav-link text-sm uppercase tracking-widest text-gray-300 hover:text-primary transition-colors">Collection</a>
+<a href="#story" class="nav-link text-sm uppercase tracking-widest text-gray-300 hover:text-primary transition-colors">Our Story</a>
+<a href="#ingredients" class="nav-link text-sm uppercase tracking-widest text-gray-300 hover:text-primary transition-colors">Ingredients</a>
+<a href="#" class="nav-link text-sm uppercase tracking-widest text-gray-300 hover:text-primary transition-colors">Journal</a>
+</div>
+<div class="flex items-center space-x-4">
+<a href="#" class="w-10 h-10 flex items-center justify-center text-gray-300 hover:text-primary transition-colors">
+<i class="ri-search-line ri-lg"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center text-gray-300 hover:text-primary transition-colors">
+<i class="ri-user-line ri-lg"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center text-gray-300 hover:text-primary transition-colors">
+<i class="ri-shopping-bag-line ri-lg"></i>
+</a>
+<button class="md:hidden w-10 h-10 flex items-center justify-center text-gray-300 hover:text-primary transition-colors">
+<i class="ri-menu-line ri-lg"></i>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative h-screen flex items-center overflow-hidden" style="background-image: url('https://readdy.ai/api/search-image?query=A%20luxurious%20perfume%20bottle%20with%20a%20flame-shaped%20copper%20cap%20against%20a%20dark%20background%20with%20dramatic%20lighting.%20The%20bottle%20is%20matte%20black%20with%20glowing%20copper%20CINDER%20text.%20Subtle%20smoke%20wisps%20and%20ember%20glows%20surround%20the%20bottle%2C%20creating%20an%20atmosphere%20of%20dark%20luxury%20and%20elemental%20power.%20Professional%20product%20photography%20with%20sophisticated%20shadow%20work%20and%20elegant%20reflections%20on%20a%20dark%20surface.&width=1920&height=1080&seq=123456&orientation=landscape'); background-size: cover; background-position: right center;">
+<div class="absolute inset-0 hero-gradient"></div>
+<div class="container mx-auto px-6 relative z-10">
+<div class="max-w-2xl">
+<h1 class="text-5xl md:text-7xl font-bold mb-4 font-['Cormorant_Garamond'] leading-tight text-white">Ignite Your <span class="text-primary">Senses</span></h1>
+<p class="text-xl md:text-2xl mb-8 text-gray-300 font-light">Fragrances that capture the raw beauty, intensity, and sensuality of fire. From warm ember glow to wild inferno blaze.</p>
+<div class="flex flex-col sm:flex-row gap-4">
+<a href="#collection" class="cta-button text-white py-3 px-8 !rounded-button text-center whitespace-nowrap">Discover Collection</a>
+<a href="https://readdy.ai/home/4f3e43b8-c28a-4360-888d-254373f33d5d/be612acd-308d-4e94-8860-3c8532179e58" data-readdy="true" class="bg-transparent border border-primary text-primary hover:bg-primary hover:bg-opacity-10 py-3 px-8 !rounded-button text-center transition-all whitespace-nowrap">Find Your Flame</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Brand Essence -->
+<section class="py-20 bg-black">
+<div class="container mx-auto px-6">
+<div class="max-w-3xl mx-auto text-center">
+<h2 class="text-3xl md:text-5xl font-bold mb-6 font-['Cormorant_Garamond'] text-white">Elemental Identity</h2>
+<p class="text-lg md:text-xl text-gray-300 leading-relaxed mb-10">Cinder is more than fragrance—it's elemental identity. Each scent evokes a different aspect of the flame, designed for those who live boldly and leave a lasting impression.</p>
+<div class="flex justify-center">
+<span class="text-primary text-2xl italic">"Smell the spark."</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Collection Section -->
+<section id="collection" class="py-20 bg-gradient-to-b from-black to-[#120D0A]">
+<div class="container mx-auto px-6">
+<h2 class="text-4xl md:text-5xl font-bold mb-16 font-['Cormorant_Garamond'] text-center text-white">The Collection</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- EMBER -->
+<div class="collection-card rounded-lg overflow-hidden">
+<div class="h-80 overflow-hidden relative">
+<img src="https://readdy.ai/api/search-image?query=A%20luxurious%20perfume%20bottle%20with%20a%20flame-shaped%20copper%20cap%20against%20a%20dark%20background.%20The%20bottle%20has%20a%20warm%20amber%20glow%20with%20smoky%20wisps%20surrounding%20it.%20The%20fragrance%20appears%20warm%20and%20comforting%20with%20hints%20of%20sandalwood%20and%20cinnamon.%20Professional%20product%20photography%20with%20sophisticated%20lighting%20highlighting%20the%20amber%20tones%20against%20a%20simple%20dark%20background.&width=600&height=800&seq=123457&orientation=portrait" alt="EMBER Fragrance" class="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105">
+<div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+<div class="absolute bottom-0 left-0 p-6">
+<h3 class="text-3xl font-bold mb-2 font-['Cormorant_Garamond'] text-primary">EMBER</h3>
+<p class="text-gray-300 mb-4">Warm, smoky, and comforting</p>
+</div>
+</div>
+<div class="p-6">
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-3 py-1 bg-[#1E1E1E] text-xs rounded-full text-gray-300">Sandalwood</span>
+<span class="px-3 py-1 bg-[#1E1E1E] text-xs rounded-full text-gray-300">Clove</span>
+<span class="px-3 py-1 bg-[#1E1E1E] text-xs rounded-full text-gray-300">Cinnamon</span>
+<span class="px-3 py-1 bg-[#1E1E1E] text-xs rounded-full text-gray-300">Amber</span>
+</div>
+<p class="text-gray-400 mb-6">The comfort of a crackling hearth. EMBER wraps you in the warmth of sandalwood and the spicy embrace of clove and cinnamon, leaving a trail of smoldering amber.</p>
+<a href="#" class="flex items-center justify-between cta-button text-white py-3 px-6 !rounded-button whitespace-nowrap">
+<span>Discover EMBER</span>
+<i class="ri-arrow-right-line ri-lg"></i>
+</a>
+</div>
+</div>
+<!-- FLARE -->
+<div class="collection-card rounded-lg overflow-hidden">
+<div class="h-80 overflow-hidden relative">
+<img src="https://readdy.ai/api/search-image?query=A%20luxurious%20perfume%20bottle%20with%20a%20flame-shaped%20copper%20cap%20against%20a%20dark%20background.%20The%20bottle%20has%20bright%20orange%20and%20yellow%20accents%20with%20energetic%20light%20reflections.%20The%20fragrance%20appears%20vibrant%20and%20citrusy%20with%20hints%20of%20blood%20orange%20and%20neroli.%20Professional%20product%20photography%20with%20sophisticated%20lighting%20highlighting%20the%20bright%2C%20energetic%20tones%20against%20a%20simple%20dark%20background.&width=600&height=800&seq=123458&orientation=portrait" alt="FLARE Fragrance" class="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105">
+<div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+<div class="absolute bottom-0 left-0 p-6">
+<h3 class="text-3xl font-bold mb-2 font-['Cormorant_Garamond'] text-primary">FLARE</h3>
+<p class="text-gray-300 mb-4">Bright, energetic, citrus-sparked</p>
+</div>
+</div>
+<div class="p-6">
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-3 py-1 bg-[#1E1E1E] text-xs rounded-full text-gray-300">Blood Orange</span>
+<span class="px-3 py-1 bg-[#1E1E1E] text-xs rounded-full text-gray-300">Neroli</span>
+<span class="px-3 py-1 bg-[#1E1E1E] text-xs rounded-full text-gray-300">Pink Pepper</span>
+<span class="px-3 py-1 bg-[#1E1E1E] text-xs rounded-full text-gray-300">Cedar</span>
+</div>
+<p class="text-gray-400 mb-6">A sudden burst of light in darkness. FLARE ignites with zesty blood orange and neroli, while pink pepper adds unexpected heat before settling into woody cedar.</p>
+<a href="#" class="flex items-center justify-between cta-button text-white py-3 px-6 !rounded-button whitespace-nowrap">
+<span>Discover FLARE</span>
+<i class="ri-arrow-right-line ri-lg"></i>
+</a>
+</div>
+</div>
+<!-- INFERNO -->
+<div class="collection-card rounded-lg overflow-hidden">
+<div class="h-80 overflow-hidden relative">
+<img src="https://readdy.ai/api/search-image?query=A%20luxurious%20perfume%20bottle%20with%20a%20flame-shaped%20copper%20cap%20against%20a%20dark%20background.%20The%20bottle%20has%20deep%20red%20and%20black%20accents%20with%20intense%2C%20seductive%20lighting.%20The%20fragrance%20appears%20bold%20and%20powerful%20with%20hints%20of%20oud%20and%20leather.%20Professional%20product%20photography%20with%20sophisticated%20lighting%20highlighting%20the%20dark%2C%20intense%20tones%20against%20a%20simple%20dark%20background.&width=600&height=800&seq=123459&orientation=portrait" alt="INFERNO Fragrance" class="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105">
+<div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+<div class="absolute bottom-0 left-0 p-6">
+<h3 class="text-3xl font-bold mb-2 font-['Cormorant_Garamond'] text-primary">INFERNO</h3>
+<p class="text-gray-300 mb-4">Intense, bold, seductive</p>
+</div>
+</div>
+<div class="p-6">
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-3 py-1 bg-[#1E1E1E] text-xs rounded-full text-gray-300">Oud</span>
+<span class="px-3 py-1 bg-[#1E1E1E] text-xs rounded-full text-gray-300">Leather</span>
+<span class="px-3 py-1 bg-[#1E1E1E] text-xs rounded-full text-gray-300">Patchouli</span>
+<span class="px-3 py-1 bg-[#1E1E1E] text-xs rounded-full text-gray-300">Black Pepper</span>
+</div>
+<p class="text-gray-400 mb-6">Untamed and all-consuming. INFERNO combines rare oud with raw leather and earthy patchouli, intensified by the sharp bite of black pepper for a scent that dominates.</p>
+<a href="#" class="flex items-center justify-between cta-button text-white py-3 px-6 !rounded-button whitespace-nowrap">
+<span>Discover INFERNO</span>
+<i class="ri-arrow-right-line ri-lg"></i>
+</a>
+</div>
+</div>
+<!-- ASH -->
+<div class="collection-card rounded-lg overflow-hidden">
+<div class="h-80 overflow-hidden relative">
+<img src="https://readdy.ai/api/search-image?query=A%20luxurious%20perfume%20bottle%20with%20a%20flame-shaped%20copper%20cap%20against%20a%20dark%20background.%20The%20bottle%20has%20soft%20gray%20and%20earthy%20tones%20with%20a%20gentle%2C%20grounded%20presence.%20The%20fragrance%20appears%20soft%20and%20earthy%20with%20hints%20of%20vetiver%20and%20sage.%20Professional%20product%20photography%20with%20sophisticated%20lighting%20highlighting%20the%20subtle%2C%20earthy%20tones%20against%20a%20simple%20dark%20background.&width=600&height=800&seq=123460&orientation=portrait" alt="ASH Fragrance" class="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105">
+<div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+<div class="absolute bottom-0 left-0 p-6">
+<h3 class="text-3xl font-bold mb-2 font-['Cormorant_Garamond'] text-primary">ASH</h3>
+<p class="text-gray-300 mb-4">Soft, earthy, grounded</p>
+</div>
+</div>
+<div class="p-6">
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-3 py-1 bg-[#1E1E1E] text-xs rounded-full text-gray-300">Vetiver</span>
+<span class="px-3 py-1 bg-[#1E1E1E] text-xs rounded-full text-gray-300">Burnt Sage</span>
+<span class="px-3 py-1 bg-[#1E1E1E] text-xs rounded-full text-gray-300">Birch Tar</span>
+<span class="px-3 py-1 bg-[#1E1E1E] text-xs rounded-full text-gray-300">Musk</span>
+</div>
+<p class="text-gray-400 mb-6">What remains after the blaze. ASH is a contemplative blend of earthy vetiver and cleansing burnt sage, with smoky birch tar and a whisper of musk that lingers on skin.</p>
+<a href="#" class="flex items-center justify-between cta-button text-white py-3 px-6 !rounded-button whitespace-nowrap">
+<span>Discover ASH</span>
+<i class="ri-arrow-right-line ri-lg"></i>
+</a>
+</div>
+</div>
+<!-- SPARK -->
+<div class="collection-card rounded-lg overflow-hidden">
+<div class="h-80 overflow-hidden relative">
+<img src="https://readdy.ai/api/search-image?query=A%20luxurious%20perfume%20bottle%20with%20a%20flame-shaped%20copper%20cap%20against%20a%20dark%20background.%20The%20bottle%20has%20light%2C%20playful%20accents%20with%20flirtatious%20and%20unisex%20appeal.%20The%20fragrance%20appears%20light%20and%20flirtatious%20with%20hints%20of%20bergamot%20and%20jasmine.%20Professional%20product%20photography%20with%20sophisticated%20lighting%20highlighting%20the%20light%2C%20playful%20tones%20against%20a%20simple%20dark%20background.&width=600&height=800&seq=123461&orientation=portrait" alt="SPARK Fragrance" class="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105">
+<div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+<div class="absolute bottom-0 left-0 p-6">
+<h3 class="text-3xl font-bold mb-2 font-['Cormorant_Garamond'] text-primary">SPARK</h3>
+<p class="text-gray-300 mb-4">Light, flirtatious, unisex</p>
+</div>
+</div>
+<div class="p-6">
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-3 py-1 bg-[#1E1E1E] text-xs rounded-full text-gray-300">Bergamot</span>
+<span class="px-3 py-1 bg-[#1E1E1E] text-xs rounded-full text-gray-300">Jasmine</span>
+<span class="px-3 py-1 bg-[#1E1E1E] text-xs rounded-full text-gray-300">Cardamom</span>
+<span class="px-3 py-1 bg-[#1E1E1E] text-xs rounded-full text-gray-300">Tonka Bean</span>
+</div>
+<p class="text-gray-400 mb-6">The first flicker of attraction. SPARK dances with bright bergamot and delicate jasmine, while cardamom adds intrigue before settling into the sweet warmth of tonka bean.</p>
+<a href="#" class="flex items-center justify-between cta-button text-white py-3 px-6 !rounded-button whitespace-nowrap">
+<span>Discover SPARK</span>
+<i class="ri-arrow-right-line ri-lg"></i>
+</a>
+</div>
+</div>
+<!-- View All -->
+<div class="collection-card rounded-lg overflow-hidden flex flex-col justify-center items-center p-10 text-center">
+<div class="w-20 h-20 flex items-center justify-center mb-6 rounded-full bg-primary bg-opacity-10">
+<i class="ri-fire-line ri-2x text-primary"></i>
+</div>
+<h3 class="text-3xl font-bold mb-4 font-['Cormorant_Garamond'] text-white">Discover All</h3>
+<p class="text-gray-400 mb-8">Experience our complete collection of fire-inspired fragrances and find the one that ignites your passion.</p>
+<a href="#" class="flex items-center justify-center gap-2 cta-button text-white py-3 px-8 !rounded-button whitespace-nowrap">
+<span>View Full Collection</span>
+<i class="ri-arrow-right-line ri-lg"></i>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Our Story -->
+<section id="story" class="py-20 bg-[#0A0A0A]">
+<div class="container mx-auto px-6">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div>
+<h2 class="text-4xl md:text-5xl font-bold mb-6 font-['Cormorant_Garamond'] text-white">Our Story</h2>
+<p class="text-gray-300 mb-6 leading-relaxed">Cinder was born from a fascination with fire's dual nature—both destructive and regenerative, dangerous yet mesmerizing. Our founder, Isabella Blackwood, spent years studying the ancient art of perfumery across the globe before creating fragrances that capture fire's many facets.</p>
+<p class="text-gray-300 mb-8 leading-relaxed">Each Cinder fragrance is meticulously crafted in our Paris atelier, where traditional techniques meet modern innovation. We source the finest raw materials from sustainable producers worldwide, ensuring every bottle contains not just scent, but story.</p>
+<a href="https://readdy.ai/home/4f3e43b8-c28a-4360-888d-254373f33d5d/1465f2ed-67b4-4f9f-8311-0295fa9537e6" data-readdy="true" class="inline-flex items-center text-primary hover:text-white hover:bg-primary py-2 px-4 border border-primary transition-colors !rounded-button whitespace-nowrap">
+<span>Learn More</span>
+<i class="ri-arrow-right-line ri-lg ml-2"></i>
+</a>
+</div>
+<div class="relative">
+<img src="https://readdy.ai/api/search-image?query=A%20sophisticated%20perfume%20atelier%20in%20Paris%20with%20warm%20amber%20lighting.%20Artisanal%20perfume-making%20equipment%20and%20ingredients%20are%20arranged%20on%20wooden%20workbenches.%20Glass%20bottles%2C%20copper%20stills%2C%20and%20raw%20materials%20like%20sandalwood%2C%20cinnamon%20sticks%2C%20and%20amber%20resin%20are%20visible.%20The%20space%20has%20a%20luxurious%20yet%20authentic%20feel%20with%20dark%20wood%20and%20copper%20accents%20throughout.%20The%20atmosphere%20suggests%20traditional%20craftsmanship%20meeting%20modern%20luxury.&width=800&height=600&seq=123462&orientation=landscape" alt="Cinder Atelier" class="w-full h-full object-cover rounded-lg shadow-2xl">
+<div class="absolute -bottom-6 -right-6 bg-black p-4 rounded-lg shadow-xl">
+<span class="text-primary font-['Cormorant_Garamond'] text-xl italic">"Fire transforms everything it touches. So do our fragrances."</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Ingredients Section -->
+<section id="ingredients" class="py-20 bg-gradient-to-b from-[#0A0A0A] to-black">
+<div class="container mx-auto px-6">
+<div class="text-center max-w-3xl mx-auto mb-16">
+<h2 class="text-4xl md:text-5xl font-bold mb-6 font-['Cormorant_Garamond'] text-white">Elemental Ingredients</h2>
+<p class="text-gray-300">We source the finest raw materials from around the world, each selected for their unique ability to evoke different aspects of fire's complex character.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="bg-[#0F0F0F] rounded-lg overflow-hidden group hover:shadow-lg hover:shadow-primary/20 transition-all">
+<div class="h-60 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=Close-up%20of%20raw%20oud%20wood%20with%20rich%2C%20dark%20texture%20against%20a%20black%20background%20with%20subtle%20amber%20lighting.%20The%20wood%20appears%20resinous%20and%20valuable%20with%20intricate%20grain%20patterns.%20Professional%20product%20photography%20highlighting%20the%20luxury%20ingredient%20used%20in%20high-end%20perfumery.&width=600&height=400&seq=123463&orientation=landscape" alt="Oud" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+</div>
+<div class="p-6">
+<h3 class="text-2xl font-bold mb-2 font-['Cormorant_Garamond'] text-primary">Oud</h3>
+<p class="text-gray-400">Rare and precious, oud embodies the smoldering intensity of inferno. Harvested from agarwood trees, this resin forms only when the wood is infected with a specific mold—a transformation through adversity.</p>
+</div>
+</div>
+<div class="bg-[#0F0F0F] rounded-lg overflow-hidden group hover:shadow-lg hover:shadow-primary/20 transition-all">
+<div class="h-60 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=Close-up%20of%20fresh%20blood%20oranges%20cut%20open%20to%20reveal%20vibrant%20red%20flesh%20against%20a%20black%20background%20with%20subtle%20amber%20lighting.%20The%20citrus%20appears%20juicy%20and%20aromatic%20with%20droplets%20of%20essential%20oil%20visible%20on%20the%20surface.%20Professional%20product%20photography%20highlighting%20the%20luxury%20ingredient%20used%20in%20high-end%20perfumery.&width=600&height=400&seq=123464&orientation=landscape" alt="Blood Orange" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+</div>
+<div class="p-6">
+<h3 class="text-2xl font-bold mb-2 font-['Cormorant_Garamond'] text-primary">Blood Orange</h3>
+<p class="text-gray-400">The vibrant essence of flare captured in citrus form. Our blood oranges are hand-harvested from Sicilian groves, where volcanic soil infuses them with distinctive character and intensity.</p>
+</div>
+</div>
+<div class="bg-[#0F0F0F] rounded-lg overflow-hidden group hover:shadow-lg hover:shadow-primary/20 transition-all">
+<div class="h-60 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=Close-up%20of%20sandalwood%20pieces%20and%20powder%20against%20a%20black%20background%20with%20subtle%20amber%20lighting.%20The%20wood%20appears%20creamy%20and%20aromatic%20with%20visible%20essential%20oils.%20Professional%20product%20photography%20highlighting%20the%20luxury%20ingredient%20used%20in%20high-end%20perfumery.&width=600&height=400&seq=123465&orientation=landscape" alt="Sandalwood" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+</div>
+<div class="p-6">
+<h3 class="text-2xl font-bold mb-2 font-['Cormorant_Garamond'] text-primary">Sandalwood</h3>
+<p class="text-gray-400">The heart of ember's warmth. Our sustainably harvested Australian sandalwood provides a creamy, comforting base that evokes the lingering warmth of dying embers.</p>
+</div>
+</div>
+<div class="bg-[#0F0F0F] rounded-lg overflow-hidden group hover:shadow-lg hover:shadow-primary/20 transition-all">
+<div class="h-60 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=Close-up%20of%20dried%20sage%20bundles%20being%20burnt%20with%20wisps%20of%20smoke%20against%20a%20black%20background%20with%20subtle%20amber%20lighting.%20The%20sage%20appears%20aromatic%20and%20mystical%20with%20visible%20essential%20oils%20being%20released.%20Professional%20product%20photography%20highlighting%20the%20luxury%20ingredient%20used%20in%20high-end%20perfumery.&width=600&height=400&seq=123466&orientation=landscape" alt="Burnt Sage" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+</div>
+<div class="p-6">
+<h3 class="text-2xl font-bold mb-2 font-['Cormorant_Garamond'] text-primary">Burnt Sage</h3>
+<p class="text-gray-400">The spiritual essence of ash. Our white sage is hand-harvested and carefully charred to capture the cleansing, purifying qualities of sacred smoke rituals.</p>
+</div>
+</div>
+</div>
+<div class="mt-12 text-center">
+<a href="https://readdy.ai/home/4f3e43b8-c28a-4360-888d-254373f33d5d/ce03731d-b1df-4f29-b616-7bcb42d2e533" data-readdy="true" class="inline-flex items-center text-primary hover:text-white hover:bg-primary py-2 px-6 border border-primary transition-colors !rounded-button whitespace-nowrap">
+<span>Explore All Ingredients</span>
+<i class="ri-arrow-right-line ri-lg ml-2"></i>
+</a>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-20 bg-black">
+<div class="container mx-auto px-6">
+<h2 class="text-4xl md:text-5xl font-bold mb-16 font-['Cormorant_Garamond'] text-center text-white">Ignited Impressions</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="bg-gradient-to-br from-[#1A1A1A] to-[#0F0F0F] p-8 rounded-lg">
+<div class="flex items-center mb-6">
+<div class="text-primary">
+<i class="ri-star-fill ri-lg"></i>
+<i class="ri-star-fill ri-lg"></i>
+<i class="ri-star-fill ri-lg"></i>
+<i class="ri-star-fill ri-lg"></i>
+<i class="ri-star-fill ri-lg"></i>
+</div>
+</div>
+<p class="text-gray-300 italic mb-6">"INFERNO is unlike anything I've ever experienced. It's bold, commanding, and leaves an unforgettable impression. When I wear it, I feel unstoppable."</p>
+<div class="flex items-center">
+<div class="mr-4 w-12 h-12 rounded-full bg-gray-700 flex items-center justify-center text-white font-semibold">JD</div>
+<div>
+<h4 class="text-white font-medium">Jonathan Drake</h4>
+<p class="text-gray-400 text-sm">New York, NY</p>
+</div>
+</div>
+</div>
+<div class="bg-gradient-to-br from-[#1A1A1A] to-[#0F0F0F] p-8 rounded-lg">
+<div class="flex items-center mb-6">
+<div class="text-primary">
+<i class="ri-star-fill ri-lg"></i>
+<i class="ri-star-fill ri-lg"></i>
+<i class="ri-star-fill ri-lg"></i>
+<i class="ri-star-fill ri-lg"></i>
+<i class="ri-star-fill ri-lg"></i>
+</div>
+</div>
+<p class="text-gray-300 italic mb-6">"EMBER has become my signature scent. It's warm, intimate, and everyone asks what I'm wearing. The longevity is impressive—it stays with me all day."</p>
+<div class="flex items-center">
+<div class="mr-4 w-12 h-12 rounded-full bg-gray-700 flex items-center justify-center text-white font-semibold">SO</div>
+<div>
+<h4 class="text-white font-medium">Sophia Oliveira</h4>
+<p class="text-gray-400 text-sm">Paris, France</p>
+</div>
+</div>
+</div>
+<div class="bg-gradient-to-br from-[#1A1A1A] to-[#0F0F0F] p-8 rounded-lg">
+<div class="flex items-center mb-6">
+<div class="text-primary">
+<i class="ri-star-fill ri-lg"></i>
+<i class="ri-star-fill ri-lg"></i>
+<i class="ri-star-fill ri-lg"></i>
+<i class="ri-star-fill ri-lg"></i>
+<i class="ri-star-fill ri-lg"></i>
+</div>
+</div>
+<p class="text-gray-300 italic mb-6">"I alternate between SPARK and ASH depending on my mood. The contrast is fascinating—one playful and light, the other deep and contemplative. Both are masterfully crafted."</p>
+<div class="flex items-center">
+<div class="mr-4 w-12 h-12 rounded-full bg-gray-700 flex items-center justify-center text-white font-semibold">AK</div>
+<div>
+<h4 class="text-white font-medium">Akira Tanaka</h4>
+<p class="text-gray-400 text-sm">Tokyo, Japan</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter -->
+<section class="py-20 bg-gradient-to-b from-black to-[#0A0505]" style="background-image: url('https://readdy.ai/api/search-image?query=Abstract%20dark%20background%20with%20subtle%20smoke%20wisps%20and%20ember%20glows%20in%20shades%20of%20deep%20red%2C%20copper%2C%20and%20black.%20The%20image%20has%20a%20luxurious%2C%20mysterious%20quality%20with%20elegant%20smoke%20patterns%20that%20create%20an%20atmosphere%20of%20dark%20luxury%20and%20elemental%20power.%20Professional%20photography%20with%20sophisticated%20lighting%20creating%20a%20perfect%20backdrop%20for%20luxury%20brand%20content.&width=1920&height=600&seq=123467&orientation=landscape'); background-size: cover; background-position: center;">
+<div class="container mx-auto px-6">
+<div class="max-w-2xl mx-auto bg-black bg-opacity-80 backdrop-blur-md p-10 rounded-lg">
+<div class="text-center mb-8">
+<h2 class="text-3xl md:text-4xl font-bold mb-4 font-['Cormorant_Garamond'] text-white">Join the Flame</h2>
+<p class="text-gray-300">Subscribe to receive exclusive offers, early access to new releases, and insights into the art of fragrance.</p>
+</div>
+<form class="flex flex-col sm:flex-row gap-4">
+<input type="email" placeholder="Your email address" class="newsletter-input flex-grow py-3 px-4 !rounded-button text-white outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50 bg-black bg-opacity-50">
+<button type="submit" class="cta-button text-white py-3 px-6 !rounded-button whitespace-nowrap">Subscribe</button>
+</form>
+<p class="text-gray-400 text-sm mt-4 text-center">By subscribing, you agree to our Privacy Policy and consent to receive updates from Cinder.</p>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-black py-16">
+<div class="container mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+<div>
+<a href="#" class="text-3xl font-['Cormorant_Garamond'] font-bold text-primary tracking-wider mb-6 inline-block">CINDER</a>
+<p class="text-gray-400 mb-6">High-end fragrances that capture the raw beauty, intensity, and sensuality of fire.</p>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-[#1A1A1A] text-gray-300 hover:text-primary transition-colors">
+<i class="ri-instagram-line ri-lg"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-[#1A1A1A] text-gray-300 hover:text-primary transition-colors">
+<i class="ri-facebook-line ri-lg"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-[#1A1A1A] text-gray-300 hover:text-primary transition-colors">
+<i class="ri-twitter-x-line ri-lg"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-[#1A1A1A] text-gray-300 hover:text-primary transition-colors">
+<i class="ri-pinterest-line ri-lg"></i>
+</a>
+</div>
+</div>
+<div>
+<h3 class="text-white text-lg font-semibold mb-6">Shop</h3>
+<ul class="space-y-3">
+<li><a href="#" class="text-gray-400 hover:text-primary transition-colors">All Fragrances</a></li>
+<li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Discovery Sets</a></li>
+<li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Limited Editions</a></li>
+<li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Gift Cards</a></li>
+<li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Accessories</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-white text-lg font-semibold mb-6">About</h3>
+<ul class="space-y-3">
+<li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Our Story</a></li>
+<li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Ingredients</a></li>
+<li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Sustainability</a></li>
+<li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Journal</a></li>
+<li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Press</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-white text-lg font-semibold mb-6">Customer Care</h3>
+<ul class="space-y-3">
+<li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Contact Us</a></li>
+<li><a href="#" class="text-gray-400 hover:text-primary transition-colors">FAQs</a></li>
+<li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Shipping & Returns</a></li>
+<li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Track Order</a></li>
+<li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Privacy Policy</a></li>
+</ul>
+</div>
+</div>
+<div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-500 text-sm mb-4 md:mb-0">© 2025 Cinder. All rights reserved.</p>
+<div class="flex items-center space-x-4">
+<i class="ri-visa-fill ri-lg text-gray-400"></i>
+<i class="ri-mastercard-fill ri-lg text-gray-400"></i>
+<i class="ri-paypal-fill ri-lg text-gray-400"></i>
+<i class="ri-apple-fill ri-lg text-gray-400"></i>
+</div>
+</div>
+</div>
+</footer>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function(e) {
+e.preventDefault();
+const targetId = this.getAttribute('href');
+if (targetId === '#') return;
+const targetElement = document.querySelector(targetId);
+if (targetElement) {
+window.scrollTo({
+top: targetElement.offsetTop - 80,
+behavior: 'smooth'
+});
+}
+});
+});
+});
+document.addEventListener('DOMContentLoaded', function() {
+// Navbar scroll effect
+const navbar = document.querySelector('nav');
+window.addEventListener('scroll', function() {
+if (window.scrollY > 50) {
+navbar.classList.add('bg-black');
+navbar.classList.remove('bg-opacity-90');
+navbar.classList.add('bg-opacity-95');
+navbar.classList.add('shadow-md');
+} else {
+navbar.classList.add('bg-opacity-90');
+navbar.classList.remove('bg-opacity-95');
+navbar.classList.remove('shadow-md');
+}
+});
+});
+</script>
+</body>
+</html>
